@@ -1,0 +1,10 @@
+.header{
+    @include container();
+    @include clearfix();
+    margin-top: $s10 * 1.5;
+    &__logo{
+        font-size: $h3;
+        color: black;
+        font-weight: 600;
+    }
+}

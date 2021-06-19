@@ -1,0 +1,109 @@
+$icon-bars-color: $white-color;
+$icon-bars-height: 0.15rem;
+$icon-bars-width: 1.6rem;
+.navbar{
+    @include container();
+    @include media-query-min($laptops){
+        @include full-container();    }
+    @include clearfix();
+    &__button{
+        @include media-query-min($laptops){
+            display: none;
+        }
+        background-color: $main-color;
+        padding: 1rem 0.7rem;
+        border: 1px $white-color solid;
+        border-radius: 0.2rem;
+        float: right;
+        order: 1;
+        &__icon{
+            width: 1.6rem;
+            height: $icon-bars-height;
+            display: block;
+            background-color: $icon-bars-color;
+            &::before,
+            &::after{
+                content: "";
+                width: $icon-bars-width;
+                height: $icon-bars-height;
+                display: block;
+                background-color: $icon-bars-color;
+            }
+            &::before{
+                transform: translateY(-0.6rem);
+            }
+            &::after{
+                transform: translateY(0.45rem);
+            }
+        }
+    }
+    &__content{
+        display: none;
+        background-color: $main-color;
+        padding-top: 1rem;
+        float: left;
+        width: 100%;
+        @include media-query-min($laptops){
+            display: block;
+            height: 100%;
+            float: none;
+            padding-top: 0;
+        }
+    }
+    &__list{
+        list-style-type: none;
+        display: block;
+        text-align: center;
+        margin: 0 !important;
+        @include media-query-min($laptops){
+            padding: 1rem 0;
+            display: block;
+            text-align: right;
+        }
+        &__item{
+            display: block;
+            margin-top: 1.2rem;
+            @include media-query-min($laptops){
+                display: inline;
+                &:not(:first-child){
+                    padding-left: 1.2rem;
+                }
+            }
+            &__link{
+                padding: 1rem 0;
+                text-decoration: none;
+            }
+        }
+    }
+    &--transparent{
+        background-color: none;
+        .navbar__list__item__link {
+            color: white;
+        }
+    }
+    &--main{
+        background-color: $main-color;
+        .navbar__list__item__link {
+            color: white;
+        }
+    }
+    &--headernav{
+        padding: 0;
+        .navbar{
+            &__content{
+                padding: 0rem 0 2rem 0;
+                @include media-query-min($laptops){
+                    padding: unset;
+                }
+            }
+            &__list{
+                padding: 0;
+                &__item{
+                    &__link{
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

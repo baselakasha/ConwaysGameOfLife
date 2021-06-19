@@ -1,0 +1,6 @@
+.full-conatiner{
+    @include full-container();
+}
+.container{
+    @include container();
+}

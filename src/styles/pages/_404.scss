@@ -1,0 +1,23 @@
+.notfound-main{
+    height: 80vh;
+}
+.notfound{
+    @include small-container();
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: center;
+    &__image{
+        margin: 0 auto;
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    }
+    &__text{
+        padding-bottom: 2rem;
+        text-align: center;
+    }
+    &__heading{
+        padding-bottom: 1rem;
+    }
+}

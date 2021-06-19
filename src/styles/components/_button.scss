@@ -1,0 +1,41 @@
+.button{
+    border: none;
+    background: none;
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.8rem;
+    &:focus{
+        box-shadow: 3px 3px 3px rgba($main-color, 0.5);
+    }
+    &--white{
+        background-color:white;
+        color: $main-color;
+        &:focus{
+            box-shadow: 3px 3px 3px rgba($main-color, 0.5);
+        }
+    }
+    &--main{
+        background-color: $main-color;
+        color: $white-color;
+        &:focus{
+            box-shadow: 3px 3px 3px rgba($white-color, 0.5);
+        }
+    }
+    &--knowmore{
+        text-align: center;
+        border-radius: 1.7rem;
+        font-size: 1.01rem;
+        padding: 1rem 0.9rem;
+        margin-top: 0.7rem;
+    }
+    &--medium{
+        font-size: 1rem;
+    }
+    &--large{
+        font-size: 1.2rem;
+        padding: 0.7rem 1.6rem;
+    }
+}

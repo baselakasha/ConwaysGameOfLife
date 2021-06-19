@@ -1,0 +1,50 @@
+.footer{
+    &--container{
+        background-color: $main-color;
+        padding: 1.7rem 0;
+        margin-top: 3rem;
+    }
+    @include container();
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    &__first{
+        width: 100%;
+        text-align: center;
+        @include media-query-min($tablets){
+            width: unset;
+        }
+        a{
+            color: $white-color;
+            text-decoration: none;
+            font-size: $h5;
+        }
+    }
+    &__second{
+        margin-top: 1.5rem;
+        width: 100%;
+        justify-content: space-evenly;
+        @include media-query-min($tablets){
+            margin-top: 0;
+            width: unset;
+        }
+    }
+    &__icons{
+        &--container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        width: 2.8rem;
+        height: 2.8rem;
+        @include media-query-min($tablets){
+            width: 3.1rem;
+            height: 3.1rem;
+            &:not(:first-child){
+                margin-left: 2rem;
+            }
+        }
+    }
+}
