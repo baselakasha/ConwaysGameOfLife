@@ -10,7 +10,7 @@ jobs:
       - name: Install, test and Build 🔧
         run: |
           npm install
-          mpm run test
+          npm run test
           npm run build
 
       - name: Deploy 🚀
