@@ -1,5 +1,4 @@
 const {Game} = require("./core/Game");
-
 import "../styles/style.scss";
 
 function main() {
@@ -10,19 +9,52 @@ function main() {
 
     drawGameScreen(my_game, table_body);
     listenToGenrationButton(my_game, table_body);
-}
-
-function drawGameScreen(my_game, table_body) {
-    drawGrid(my_game, table_body);
-    addEventListenersToCells(my_game);
+    listenTogameInterval(my_game, table_body);
 }
 
 function listenToGenrationButton(my_game, table_body) {
     let next_gen_button = document.getElementById("nextGenButton");
     next_gen_button.onclick = function () {
-        my_game.nextGeneration();
-        drawGameScreen(my_game, table_body);
+        showNextGen(my_game, table_body);
     };
+}
+
+function listenTogameInterval(my_game, table_body) {
+    let toggleButton = document.getElementById("toggleButton");
+    let game_interval;
+    let speed = 900;
+    let game_running = false;
+
+    toggleButton.onclick = function () {
+        if (game_running)
+            stopGameInterval();
+        else
+            startGameInterval();
+    };
+
+    function stopGameInterval() {
+        clearInterval(game_interval);
+        toggleButton.innerText = "Start";
+        game_running = false;
+    }
+
+    function startGameInterval() {
+        game_interval = setInterval(function () {
+            showNextGen(my_game, table_body);
+        }, speed);
+        game_running = true;
+        toggleButton.innerText = "Pause";
+    }
+}
+
+function showNextGen(my_game, table_body) {
+    my_game.nextGeneration();
+    drawGameScreen(my_game, table_body);
+}
+
+function drawGameScreen(my_game, table_body) {
+    drawGrid(my_game, table_body);
+    addEventListenersToCells(my_game);
 }
 
 function drawGrid(my_game, table_body) {

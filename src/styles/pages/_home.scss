@@ -23,7 +23,19 @@
     }
 }
 
-.next-gen-button {
-    margin: $s5 auto;
-    display: block;
+.bottom-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $s6;
+    margin-top: $s5;
 }
+
+// .next-gen-button {
+//     display: inline;
+// }
+
+// .start-button{
+//     display: inline;
+// }
+
